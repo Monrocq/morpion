@@ -26,10 +26,14 @@ class Board
     #1) demande au bon joueur ce qu'il souhaite faire
     #2) change la BoardCase jouée en fonction de la valeur du joueur (X ou O)
     p 'Dans quelle case souhaitez vous aller?'
-    case_choosed = gets.chomp
-    @board_cases.each do |board_case|
-      if case_choosed == board_case.identifiant
-        board_case.value = value
+    good_value = false
+    while good_value == false do
+      case_choosed = gets.chomp
+      @board_cases.each do |board_case|
+        if case_choosed == board_case.identifiant
+          board_case.value = value
+          good_value = true
+        end
       end
     end
   end
