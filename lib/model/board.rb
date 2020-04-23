@@ -30,7 +30,7 @@ class Board
     while good_value == false do
       case_choosed = gets.chomp
       @board_cases.each do |board_case|
-        if case_choosed == board_case.identifiant
+        if case_choosed == board_case.identifiant && board_case.value == nil
           board_case.value = value
           good_value = true
         end
